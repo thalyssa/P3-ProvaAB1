@@ -16,3 +16,14 @@
 
 ### Relatório geral da unidade acadêmica:
    O relatório geral da comunidade acadêmica também pode ser solicitado por qualquer usuário do sistema, assim como as consultas. Porém, ao contrário das anteriores, a função para gerar o relatório geral não recebe parâmetros, uma vez que retorna todos os projetos e atividades existentes no banco de dados. Caso não exista nenhum projeto ou atividade registrado, a função exibe uma mensagem informativa para o usuário.
+
+## Classes
+
+### projeto
+   Classe que representa a estrutura básica de um projeto e garante os métodos para manipulá-lo. Na variável coordenador, é armazenada a matrícula do usuário criador do projeto, enquanto na ArrayList de colaboradores, são armazenadas as matrículas de todos os acadêmicos envolvidos. A centralização de informações facilita a pesquisa e extração de dados, porém, como os identificadores dos projetos também são armazenados nas ArrayLists internas de cada usuário participante, existe certa redundância de dados.
+
+### atividade
+   Classe que registra as atividades partes de um projeto. Toda tarefa é criada como incompleta por padrão (boolean = false) e possui apenas um método: Concluir, que só pode ser chamado pelo usuário cuja matrícula estiver registrada como responsável. O método concluir verifica se todas as subtarefas (ArrayList de atividades) estão finalizadas  e só então marca a atividade principal como concluída (boolean = true).
+
+### user
+   Classe-mãe de todas as classes que representam os sub-tipos de usuário possíveis de existir no sistema, além do usuário comum que não necessariamente está vinculado a um projeto acadêmico, como o administrador do sistema. O usuário padrão é capaz de executar buscas por meio dos métodos disponíveis e gerar o relatório geral de projetos e atividades.
