@@ -27,3 +27,18 @@
 
 ### user
    Classe-mãe de todas as classes que representam os sub-tipos de usuário possíveis de existir no sistema, além do usuário comum que não necessariamente está vinculado a um projeto acadêmico, como o administrador do sistema. O usuário padrão é capaz de executar buscas por meio dos métodos disponíveis e gerar o relatório geral de projetos e atividades.
+
+### aluno
+   Classe criada para a representação dos discentes envolvidos na pesquisa. Herda todas as informações da classe user, além do registro do tipo de aluno (Graduação, mestrado ou doutorado), o curso que faz e o código da turma que participa.
+
+### professor
+   Por ser, além do pesquisador, o único que pode coordenar um projeto, é, junto com a classe pesquisador, a única classe com o método criarProjeto, garantindo a integridade da regra de negócio vigente. Além disso a classe armazena os códigos das disciplinas ensinadas, as turmas atualmente contempladas pelo docente e uma ArrayList própria para os códigos dos projetos coordenador pelo professor, herdando todas as outras informações da classe user.
+
+### profissional
+   Outra classe-filha de user, registra os profissionais alocados e suas devidas categorias (desenvolvedor, testador ou analista).
+
+### pesquisador
+   Herdeira da classe user e única classe, além de professor, com acesso ao método criarProjeto. Assim como a classe professor, um objeto pesquisador também possui uma ArrayList interna para o registro dos projetos pelos quais ficou responsável. Além disso, é registrada também a sua área de atuação.
+
+### tecnico
+   Classe-filha de user que registra os técnicos envolvidos nos projetos.
